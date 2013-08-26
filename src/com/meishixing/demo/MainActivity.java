@@ -21,11 +21,11 @@ public class MainActivity extends ListActivity
 {
 
     private String[] DEMO_NAMES = {
-        "Fancy dialog"
+        "Msx dialog"
     };
 
     private Class[] DEMO_CLASSES = {
-        FancyDialog.class
+        MsxDialog.class
     };
 
     /** Called when the activity is first created. */

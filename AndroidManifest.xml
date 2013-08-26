@@ -12,7 +12,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="FancyDialog" android:theme="@android:style/Theme.Dialog">
+        <activity android:name="MsxDialog" android:theme="@style/Msx.Dialog.Theme">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
