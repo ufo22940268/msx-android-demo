@@ -3,6 +3,9 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+    android:paddingTop="10dip"
+    android:paddingLeft="6dip"
+    android:paddingRight="6dip"
     >
 
     <TextView 
@@ -22,5 +25,33 @@
         android:layout_height="wrap_content"
         android:padding="6dip"
         />
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dip"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/orange_button"
+            android:text="确定"
+            style="@style/Msx.Button"
+            />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:background="@drawable/blue_button"
+            android:layout_marginLeft="8dip"
+            style="@style/Msx.Button"
+            />
+    
+    </LinearLayout>
 
 </LinearLayout>

@@ -6,4 +6,23 @@
          <item name="android:background">@color/msx_dialog_bg</item>
         <item name="android:windowBackground">@android:color/transparent</item>
      </style>
+
+     <style name="Msx.Loading.Theme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+     </style>
+
+     <style name="Msx">
+     </style>
+
+     <style name="Msx.Button">
+         <item name="android:textStyle">bold</item>
+         <item name="android:paddingTop">6dip</item>
+         <item name="android:paddingBottom">6dip</item>
+         <item name="android:paddingLeft">15dip</item>
+         <item name="android:paddingRight">15dip</item>
+         <item name="android:textColor">@android:color/white</item>
+     </style>
  </resources>

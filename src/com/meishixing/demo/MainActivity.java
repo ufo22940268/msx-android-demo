@@ -17,15 +17,21 @@ import java.util.*;
 
 import org.json.*;
 
-public class MainActivity extends ListActivity
-{
+public class MainActivity extends ListActivity {
+
+    static public final int DIALOG_POS = 0;
+    static public final int LOADING_POS = 2;
 
     private String[] DEMO_NAMES = {
-        "Msx dialog"
+        "dialog",
+        "swicher",
+        "loading"
     };
 
     private Class[] DEMO_CLASSES = {
-        MsxDialog.class
+        MsxDialog.class,
+        MsxSwitcher.class,
+        MsxLoading.class,
     };
 
     /** Called when the activity is first created. */
@@ -44,16 +50,27 @@ public class MainActivity extends ListActivity
             datas.add(map);
         }
 
-        setListAdapter(new SimpleAdapter(this, datas, android.R.layout.simple_list_item_1, new String[]{"title"}, viewIds));
+        setListAdapter(new SimpleAdapter(this, datas, android.R.layout.simple_list_item_1, new String[]{"title"}, new int[]{android.R.id.text1}));
     }
 
     @Override
     protected void onListItemClick(ListView parent, View view, int pos, long id) {
         Map<String, Object> map = (Map<String, Object>)parent.getItemAtPosition(pos);
         Class des = (Class)map.get("class");
-        Intent intent = new Intent(this, des);
+        Intent intent;
+        if (pos == DIALOG_POS) {
+            intent = new MsxDialog.IntentBuilder(this)
+                .withTitle("title")
+                .withMessage("message")
+                .build();
+        } else if (pos == LOADING_POS) {
+            intent = new MsxLoading.IntentBuilder(this)
+                .withIcon(R.drawable.ic_launcher)
+                .withMessage("message")
+                .build();
+        } else {
+            intent = new Intent(this, des);
+        }
         startActivity(intent);
-
-        overridePendingTransition(R.anim.slide_in_top, android.R.anim.slide_out_right);
     }
 }
